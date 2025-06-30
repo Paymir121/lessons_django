@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine, URL
 from sqlalchemy.orm import sessionmaker
-from index_sql import models as dm
+from index_sql.inid_data_django_orm import models as dm
 
 class DBConnection:
     db_config: dict = {

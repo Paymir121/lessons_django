@@ -1,0 +1,94 @@
+{
+    "authors": [
+        {
+            "first_name": "Лев",
+            "last_name": "Толстой",
+            "email": "tolstoy@example.com",
+            "is_active": true
+        },
+        {
+            "first_name": "Фёдор",
+            "last_name": "Достоевский",
+            "email": "dostoevsky@example.com",
+            "is_active": true
+        },
+        {
+            "first_name": "Антон",
+            "last_name": "Чехов",
+            "email": "chekhov@example.com",
+            "is_active": false
+        }
+    ],
+    "books": [
+        {
+            "title": "Война и мир",
+            "author_email": "tolstoy@example.com",
+            "published_date": "1869-01-01T00:00:00Z",
+            "price": "1200.00",
+            "discount": "100.00",
+            "metadata": {
+                "genre": "роман-эпопея",
+                "pages": 1225
+            }
+        },
+        {
+            "title": "Анна Каренина",
+            "author_email": "tolstoy@example.com",
+            "published_date": "1877-01-01T00:00:00Z",
+            "price": "950.00",
+            "metadata": {
+                "genre": "реализм",
+                "pages": 864
+            }
+        },
+        {
+            "title": "Преступление и наказание",
+            "author_email": "dostoevsky@example.com",
+            "published_date": "1866-01-01T00:00:00Z",
+            "price": "850.00",
+            "metadata": {
+                "genre": "психологический роман",
+                "pages": 608
+            }
+        },
+        {
+            "title": "Вишнёвый сад",
+            "author_email": "chekhov@example.com",
+            "published_date": "1904-01-01T00:00:00Z",
+            "price": "600.00",
+            "discount": "50.00",
+            "metadata": {
+                "genre": "пьеса",
+                "pages": 120
+            }
+        }
+    ],
+    "reviews": [
+        {
+            "book_title": "Война и мир",
+            "rating": 5,
+            "comment": "Великолепное произведение, которое должен прочитать каждый!",
+            "created_at": "2023-01-15T10:30:00Z"
+        },
+        {
+            "book_title": "Война и мир",
+            "rating": 4,
+            "comment": "Очень длинное, но стоит потраченного времени"
+        },
+        {
+            "book_title": "Анна Каренина",
+            "rating": 5,
+            "comment": "Потрясающая история любви и трагедии"
+        },
+        {
+            "book_title": "Преступление и наказание",
+            "rating": 5,
+            "comment": "Глубокий психологический анализ преступления и его последствий"
+        },
+        {
+            "book_title": "Вишнёвый сад",
+            "rating": 3,
+            "comment": "Интересная пьеса, но не самое лучшее произведение Чехова"
+        }
+    ]
+}
