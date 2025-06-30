@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine, URL
 from sqlalchemy.orm import sessionmaker
-from index_sql.inid_data_django_orm import models as dm
+from index_sql import models as dm
 
 class DBConnection:
     db_config: dict = {
@@ -9,7 +9,7 @@ class DBConnection:
         "password": "456852",
         "host": "localhost",
         "database": "postgres",
-        "port": 5432,
+        "port": 5439,
     }
     url_object: URL = URL.create(**db_config)
     engine = create_engine(url_object, echo=True)  # echo=True для логирования SQL
