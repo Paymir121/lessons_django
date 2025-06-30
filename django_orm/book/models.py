@@ -12,7 +12,7 @@ class Book(models.Model):
     published_date = models.DateTimeField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     discount = models.DecimalField(max_digits=6, decimal_places=2, default=0)
-    book_metadata = models.JSONField(default=dict)
+    metadata = models.JSONField(default=dict)
 
 class Review(models.Model):
     book = models.ForeignKey(Book, related_name='reviews', on_delete=models.CASCADE)

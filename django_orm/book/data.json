@@ -17,6 +17,12 @@
             "last_name": "Чехов",
             "email": "chekhov@example.com",
             "is_active": false
+        },
+        {
+            "first_name": "Николай",
+            "last_name": "Гоголь",
+            "email": "gogol@example.com",
+            "is_active": true
         }
     ],
     "books": [
@@ -61,6 +67,27 @@
                 "genre": "пьеса",
                 "pages": 120
             }
+        },
+        {
+            "title": "Мёртвые души",
+            "author_email": "gogol@example.com",
+            "published_date": "1842-01-01T00:00:00Z",
+            "price": "750.00",
+            "discount": "75.00",
+            "metadata": {
+                "genre": "поэма",
+                "pages": 352
+            }
+        },
+        {
+            "title": "Братья Карамазовы",
+            "author_email": "dostoevsky@example.com",
+            "published_date": "1880-01-01T00:00:00Z",
+            "price": "1100.00",
+            "metadata": {
+                "genre": "философский роман",
+                "pages": 824
+            }
         }
     ],
     "reviews": [
@@ -89,6 +116,22 @@
             "book_title": "Вишнёвый сад",
             "rating": 3,
             "comment": "Интересная пьеса, но не самое лучшее произведение Чехова"
+        },
+        {
+            "book_title": "Мёртвые души",
+            "rating": 5,
+            "comment": "Блестящая сатира на русское общество",
+            "created_at": "2023-02-20T14:15:00Z"
+        },
+        {
+            "book_title": "Братья Карамазовы",
+            "rating": 5,
+            "comment": "Вершина творчества Достоевского, глубочайшее произведение"
+        },
+        {
+            "book_title": "Мёртвые души",
+            "rating": 4,
+            "comment": "Захватывающее чтение с уникальными персонажами"
         }
     ]
 }
