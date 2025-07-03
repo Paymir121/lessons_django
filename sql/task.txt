@@ -1,0 +1,67 @@
+CREATE TABLE customers (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(255) NOT NULL,
+	email VARCHAR(255) UNIQUE NOT NULL
+);
+
+CREATE TABLE orders (
+    id SERIAL PRIMARY KEY,
+    customer_id INTEGER NOT NULL,
+    order_date DATE NOT NULL DEFAULT CURRENT_DATE,
+    CONSTRAINT fk_customer
+        FOREIGN KEY (customer_id)
+        REFERENCES customers(id)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE order_items (
+    id SERIAL PRIMARY KEY,
+    order_id INTEGER NOT NULL,
+    product_name VARCHAR(255) NOT NULL,
+    quantity INTEGER NOT NULL CHECK (quantity > 0),
+    price DECIMAL(10, 2) NOT NULL CHECK (price >= 0),
+    CONSTRAINT fk_order
+        FOREIGN KEY (order_id)
+        REFERENCES orders(id)
+        ON DELETE CASCADE
+);
+
+Task 2
+INSERT INTO customers (name, email) VALUES
+('Романов Никита', 'eva@mail.ru'),
+('Собин Саша', 'pet@@mail.ru'),
+('Мама Паповна', 'kek@mail.ru');
+
+INSERT INTO orders (customer_id, order_date) VALUES
+(1, '2025-01-15'),
+(1, '2025-02-20'),
+(2, '2025-03-10');
+
+INSERT INTO order_items (order_id, product_name, quantity, price) VALUES
+(1, '4050ti', 1, 45000.00),
+(1, 'Мышь беспроводная Razer', 2, 1200.50),
+(2, 'Клавиатура с котиками', 1, 3500.00),
+(3, 'Монитор 49.5 см, как у пикабушника"', 1, 15000.00),
+(3, 'Коврик для мыши с аниме тяночкой', 3, 500.00);
+
+Task 3
+SELECT o.id, o.order_date
+FROM orders o
+JOIN customers c ON o.customer_id = c.id
+WHERE c.name = 'Иван Иванов';
+
+SELECT product_name, quantity, price
+FROM order_items
+WHERE order_id = 3
+ORDER BY price DESC;
+
+
+SELECT
+    c.name,
+    SUM(oi.price * oi.quantity) AS total_spent
+FROM customers c
+JOIN orders o ON c.id = o.customer_id
+JOIN order_items oi ON o.id = oi.order_id
+GROUP BY c.id, c.name
+HAVING SUM(oi.price * oi.quantity) > 5000
+ORDER BY total_spent DESC;
